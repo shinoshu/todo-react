@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme: Theme) =>
     card: {
       height: '50px',
       width: '500px',
-      margin: theme.spacing(1, 0),
       padding: theme.spacing(1),
     },
   })
@@ -34,26 +33,28 @@ export default function Task() {
   };
 
   return (
-    <Card className={classes.card}>
-      <Grid container direction="row" alignItems="center">
-        <Grid item>
-          <Box component="span" mr={1} onClick={handleClickDone}>
-            {done ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
-          </Box>
-        </Grid>
+    <Box my={1}>
+      <Card className={classes.card}>
+        <Grid container direction="row" alignItems="center">
+          <Grid item>
+            <Box component="span" mr={1} onClick={handleClickDone}>
+              {done ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
+            </Box>
+          </Grid>
 
-        <Grid item>
-          <Typography color="textSecondary">食器を洗う</Typography>
-        </Grid>
+          <Grid item>
+            <Typography color="textSecondary">食器を洗う</Typography>
+          </Grid>
 
-        <Box component="span" mr="auto" />
+          <Box component="span" mr="auto" />
 
-        <Grid item>
-          <Box component="span" onClick={handleClickFavorite}>
-            {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
-          </Box>
+          <Grid item>
+            <Box component="span" onClick={handleClickFavorite}>
+              {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+            </Box>
+          </Grid>
         </Grid>
-      </Grid>
-    </Card>
+      </Card>
+    </Box>
   );
 }
