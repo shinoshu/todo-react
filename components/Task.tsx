@@ -12,7 +12,6 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     card: {
-      height: '50px',
       width: '500px',
       padding: theme.spacing(1),
     },
@@ -35,9 +34,9 @@ export default function Task() {
   return (
     <Box my={1}>
       <Card className={classes.card}>
-        <Grid container direction="row" alignItems="center">
+        <Grid container direction="row">
           <Grid item>
-            <Box component="span" mr={1} onClick={handleClickDone}>
+            <Box mr={1} onClick={handleClickDone}>
               {done ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
             </Box>
           </Grid>
@@ -46,10 +45,10 @@ export default function Task() {
             <Typography color="textSecondary">食器を洗う</Typography>
           </Grid>
 
-          <Box component="span" mr="auto" />
+          <Box mr="auto" />
 
           <Grid item>
-            <Box component="span" onClick={handleClickFavorite}>
+            <Box onClick={handleClickFavorite}>
               {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
             </Box>
           </Grid>
